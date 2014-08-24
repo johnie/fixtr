@@ -27,6 +27,9 @@ body
   font-family "Proxima Nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif
   overflow hidden
 
+  @media (max-width: 990px)
+    overflow scroll
+
 
 .expand-btn
   position absolute
@@ -48,6 +51,9 @@ body
     left 50%
     vendor('transform', translate(-50%, -50%))
     z-index 1
+
+  @media (max-width: 990px)
+    display none
 
 .expand-btn__left
   right 2em
@@ -102,6 +108,10 @@ body
     .on-right &
       vendor('transform', translateX(90%))
 
+  @media (max-width: 990px)
+    position relative
+    width 100%
+
 
 .team-header
   display block
@@ -154,6 +164,10 @@ body
   margin 0
   height 5em
   width 5em
+
+  @media (max-width: 760px)
+    width 3.5em
+    height 3.5em
 
   &--bayern
     background-image url('images/bayern.svg')
@@ -228,21 +242,11 @@ body
   text-transform uppercase
   font-weight 600
   letter-spacing 1px
-  border-top-width 1px
-  border-top-style solid
 
   .on-left &, .on-right &
     padding 1em
     font-size 22px
     font-weight 700
-
-.games-league--bayern
-  background-color darken($bayern-brand-color, 15%)
-  border-top-color darken($bayern-brand-color, 30%)
-
-.games-league--chelsea
-  background-color darken($chelsea-brand-color, 15%)
-  border-top-color darken($chelsea-brand-color, 30%)
 
 .games-table
   margin 0
@@ -311,3 +315,44 @@ body
 
         &:nth-child(even)
           background-color darken($chelsea-brand-color, 15%)
+
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)
+
+  table, thead, tbody, th, td, tr
+    display block !important
+    text-align center !important
+
+  thead
+    visuallyhidden()
+
+  thead tr
+    visuallyhidden()
+  
+  td
+    border none
+    position relative
+    padding-left 50% !important
+
+  td:not(:last-child)
+    border-bottom 1px solid rgba(0, 0, 0, .15)
+
+  td:before
+    left 0%
+    position absolute
+    width 45%
+    padding-right 10px
+    white-space nowrap
+    font-weight 600
+    height 75%
+
+  td:nth-of-type(1):before
+    content "Date"
+  td:nth-of-type(2):before
+    content "CEST/EST"
+  td:nth-of-type(3):before
+    content "Home"
+  td:nth-of-type(4):before
+    content "vs."
+  td:nth-of-type(5):before
+    content "Gone"

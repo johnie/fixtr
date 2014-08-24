@@ -1,16 +1,16 @@
 /*------------------------------------*    $FIXTR
 \*------------------------------------*/
 .text--left {
-  text-align: left !important;
+  text-align: left;
 }
 .text--right {
-  text-align: right !important;
+  text-align: right;
 }
 .text--center {
-  text-align: center !important;
+  text-align: center;
 }
 .font--bold {
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 /**
  * Variables
@@ -30,6 +30,11 @@ body {
   padding: 0;
   font-family: "Proxima Nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
   overflow: hidden;
+}
+@media (max-width: 990px) {
+  body {
+    overflow: scroll;
+  }
 }
 .expand-btn {
   position: absolute;
@@ -57,6 +62,11 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+@media (max-width: 990px) {
+  .expand-btn {
+    display: none;
+  }
 }
 .expand-btn__left {
   right: 2em;
@@ -126,6 +136,12 @@ body {
   -ms-transform: translateX(90%);
   transform: translateX(90%);
 }
+@media (max-width: 990px) {
+  .team-wrap {
+    position: relative;
+    width: 100%;
+  }
+}
 .team-header {
   display: block;
   width: 100%;
@@ -189,6 +205,12 @@ body {
   margin: 0;
   height: 5em;
   width: 5em;
+}
+@media (max-width: 760px) {
+  .team-name {
+    width: 3.5em;
+    height: 3.5em;
+  }
 }
 .team-name--bayern {
   background-image: url("images/bayern.svg");
@@ -271,22 +293,12 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
-  border-top-width: 1px;
-  border-top-style: solid;
 }
 .on-left .games-league,
 .on-right .games-league {
   padding: 1em;
   font-size: 22px;
   font-weight: 700;
-}
-.games-league--bayern {
-  background-color: #d5002f;
-  border-top-color: #b00027;
-}
-.games-league--chelsea {
-  background-color: #07347f;
-  border-top-color: #062b68;
 }
 .games-table {
   margin: 0;
@@ -352,4 +364,67 @@ body {
 }
 .games-table--chelsea tbody tr:nth-child(even) {
   background-color: #07347f;
+}
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block !important;
+    text-align: center !important;
+  }
+  thead {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+  thead tr {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50% !important;
+  }
+  td:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+  }
+  td:before {
+    left: 0%;
+    position: absolute;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    height: 75%;
+  }
+  td:nth-of-type(1):before {
+    content: "Date";
+  }
+  td:nth-of-type(2):before {
+    content: "CEST/EST";
+  }
+  td:nth-of-type(3):before {
+    content: "Home";
+  }
+  td:nth-of-type(4):before {
+    content: "vs.";
+  }
+  td:nth-of-type(5):before {
+    content: "Gone";
+  }
 }
