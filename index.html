@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">google.load("jquery", "1");</script>
+  <script src="js/vendor/angular/angular.js"></script>
+
+  <link rel="stylesheet" href="master.css">
+
+  <title>Fixtr</title>
+  <meta charset="UTF-8">
+</head>
+<body ng-app="fixtr">
+
+  <div class="site" ng-controller="MainController" ng-class="{'on-left': onLeft, 'on-right': onRight}">
+    <div class="team-wrap team-wrap--bayern">
+      <a href class="expand-btn expand-btn__left" ng-click="onLeft = true; onRight = false;">Left</a>
+      <header class="team-header" role="banner">
+
+        <a href class="tab-btn tab-btn__left tab-btn--bayern" ng-click="bayernTab('js/templates/bayern-squad.html')">Squad</a>
+
+        <h1 class="team-name team-name--bayern">
+          {{ teamBayern.team }}
+        </h1>
+
+        <a href class="tab-btn tab-btn__right tab-btn--bayern" ng-click="bayernTab('js/templates/bayern-games.html')">Games</a>
+
+      </header>
+
+      <div class="bayern" ng-include="currentBayernTab"></div>
+
+    </div>
+    <!-- /.team-wrap team-wrap-bayern --> 
+
+    <div class="team-wrap team-wrap--chelsea">
+      <a href class="expand-btn expand-btn__right" ng-click="onLeft = false; onRight = true;">Right</a>
+      <header class="team-header" role="banner">
+
+        <a href class="tab-btn tab-btn__left tab-btn--chelsea" ng-click="chelseaTab('js/templates/chelsea-squad.html')">Squad</a>
+
+        <h1 class="team-name team-name--chelsea">
+          {{ teamChelsea.team }}
+        </h1>
+        
+        <a href class="tab-btn tab-btn__right tab-btn--chelsea" ng-click="chelseaTab('js/templates/chelsea-games.html')">Games</a>
+
+      </header>
+
+      <div class="chelsea" ng-include="currentChelseaTab"></div>
+
+    </div>
+    <!-- /.team-wrap team-wrap-chelsea -->
+
+  </div>
+
+  <script src="js/vendor/lodash/dist/lodash.js"></script>  
+  <script src="js/main.js"></script>  
+</body>
+</html>

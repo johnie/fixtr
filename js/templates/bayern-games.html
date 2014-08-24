@@ -1,0 +1,21 @@
+<h2 class="games-title">Games</h2>
+
+<table class="games-table games-table--bayern">
+  <h3 class="games-league games-league--bayern">Bundesliga</h3>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th class="text--center">CET/CEST</th>
+      <th colspan="3" class="text--center">Fixture</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="game in teamBayern.games">
+      <td>{{ game.date }}</td>
+      <td class="text--center">{{ game.time }}</td>
+      <td class="text--right" ng-class="(game.home=='Bayern München') ? 'font--bold' : ''">{{ game.home }}</td>
+      <td class="text--center">vs.</td>
+      <td class="text--left" ng-class="(game.gone=='Bayern München') ? 'font--bold' : ''">{{ game.gone }}</td>
+    </tr>
+  </tbody>
+</table>

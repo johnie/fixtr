@@ -1,0 +1,38 @@
+<h2 class="games-title">Squad</h2>
+
+<h3 class="squad-category">Goalkeepers</h3>
+<ul class="squad-lineup squad-lineup--chelsea">
+  <li ng-repeat="keeper in teamChelsea.goalkeepers">
+    <div class="lineup-tee">
+      <div class="lineup-name">{{ splitter(keeper.name) }}</div>
+      <div class="lineup-number">{{ keeper.tee }}</div>
+    </div>
+  </li>
+</ul>
+<h3 class="squad-category">Defenders</h3>
+<ul class="squad-lineup squad-lineup--chelsea">
+  <li ng-repeat="defender in teamChelsea.defenders">
+    <div class="lineup-tee">
+      <div class="lineup-name">{{ splitter(defender.name) }}</div>
+      <div class="lineup-number">{{ defender.tee }}</div>
+    </div>
+  </li>
+</ul>
+<h3 class="squad-category">Midfielders</h3>
+<ul class="squad-lineup squad-lineup--chelsea">
+  <li ng-repeat="midfielder in teamChelsea.midfielders">
+    <div class="lineup-tee">
+      <div class="lineup-name">{{ splitter(midfielder.name) }}</div>
+      <div class="lineup-number">{{ midfielder.tee }}</div>
+    </div>
+  </li>
+</ul>
+<h3 class="squad-category">Forwards</h3>
+<ul class="squad-lineup squad-lineup--chelsea">
+  <li ng-repeat="forward in teamChelsea.forwards">
+    <div class="lineup-tee">
+      <div class="lineup-name">{{ splitter(forward.name) }}</div>
+      <div class="lineup-number">{{ forward.tee }}</div>
+    </div>
+  </li>
+</ul>

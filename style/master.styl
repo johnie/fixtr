@@ -1,0 +1,313 @@
+/*------------------------------------*\
+    $FIXTR
+\*------------------------------------*/
+
+@import "mixins.styl"
+@import "helpers.styl"
+
+/**
+ * Variables
+ */
+// Bayern
+$bayern-brand-color = #FB0037
+$bayern-base-ui-color = #2D62BE
+
+// Chelsea
+$chelsea-brand-color = #083D95
+$chelsea-base-ui-color = #E1AA00
+
+*, *:before, *:after
+  vendor('box-sizing', border-box)
+
+body
+  background-color #142128
+  color #fff
+  margin 0
+  padding 0
+  font-family "Proxima Nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif
+  overflow hidden
+
+
+.expand-btn
+  position absolute
+  top 1.5em
+  display block
+  width 0
+  height 0
+  border 1em solid transparent
+  text-indent -99999px
+  vendor('transition', opacity .3s ease)
+
+  &:after
+    content ''
+    display block
+    width 3em
+    height 3em
+    position absolute
+    top 50%
+    left 50%
+    vendor('transform', translate(-50%, -50%))
+    z-index 1
+
+.expand-btn__left
+  right 2em
+  border-right-color rgba(0, 0, 0, .4)
+  cursor w-resize
+
+  .on-left &
+    opacity 0
+
+  &:after
+    cursor w-resize
+
+.expand-btn__right
+  left 2em
+  border-left-color rgba(0, 0, 0, .4)
+  cursor e-resize
+  
+  &:after
+    cursor e-resize
+  
+  .on-right &
+    opacity 0
+
+.team-wrap
+  position absolute
+  top 0
+  bottom 0
+  overflow scroll
+  width 50%
+  padding 2em 2em
+  vendor('transition', all .3s linear)
+
+  &--bayern
+    background-color $bayern-brand-color
+    left 0
+
+    .on-left &
+      vendor('transform', translateX(-90%))
+
+    .on-right &
+      vendor('transform', translateX(0%))
+      width 95%
+
+  &--chelsea
+    background-color $chelsea-brand-color
+    right 0
+
+    .on-left &
+      vendor('transform', translateX(0%))
+      width 95%
+
+    .on-right &
+      vendor('transform', translateX(90%))
+
+
+.team-header
+  display block
+  width 100%
+  margin-bottom 4em
+  text-align center
+  position relative
+
+.tab-btn
+  line-height 2.5
+  padding 0em 1.5em
+  display inline-block
+  white-space nowrap
+  text-align center
+  position absolute
+  top 50%
+  text-decoration none
+  vendor('transform', translateY(-50%))
+  font-weight 600
+  text-transform uppercase
+  vendor('border-radius', 4px)
+  letter-spacing 1px
+  font-size 14px
+
+.tab-btn__left
+  left 0
+
+.tab-btn__right
+  right 0
+
+.tab-btn--bayern
+  background-color darken($bayern-brand-color, 25%)
+  vendor('box-shadow', 0 1px 0 darken($bayern-brand-color, 50%))
+  color #fff
+
+.tab-btn--chelsea
+  background-color darken($chelsea-brand-color, 25%)
+  vendor('box-shadow', 0 1px 0 darken($chelsea-brand-color, 50%))
+  color #fff
+
+.team-name
+  display inline-block
+  text-transform uppercase
+  font-weight 300
+  text-indent -99999px
+  background transparent
+  background-position center center
+  background-repeat no-repeat
+  background-size 100%
+  margin 0
+  height 5em
+  width 5em
+
+  &--bayern
+    background-image url('images/bayern.svg')
+
+  &--chelsea
+    background-image url('images/chelsea.svg')
+
+
+
+.squad
+  padding-bottom 2em
+  clearfix()
+
+.squad-category
+  text-align center
+  text-transform uppercase
+  margin-bottom 2em
+
+.squad-lineup
+  display block
+  text-align center
+  list-style none
+  margin 0
+  padding 0
+
+  li
+    display inline-block
+    width 33.333333%
+    padding-bottom 22.5%
+    background transparent url('images/tee-bayern.svg') top center no-repeat
+    background-size 90%
+    position relative
+    margin-bottom 2em
+
+    .on-left &, .on-right &
+      width 25%
+
+  &--chelsea
+    li
+      background-image url('images/tee-chelsea.svg')
+
+.lineup-tee
+  position absolute
+  top 22%
+  left 50%
+  vendor('transform', translate(-50%))
+
+  .on-left &, .on-right &
+    font-size 1.8em
+
+.lineup-number
+  font-weight 600
+  font-size 2.8em
+
+.lineup-name
+  text-transform uppercase
+  font-weight 600
+  font-size .6em
+  padding-bottom 10px
+
+
+
+.games-title
+  text-transform uppercase
+  margin-bottom 1em
+  font-size 2em
+  font-weight 600
+
+.games-league
+  margin 0
+  padding 1em .5em
+  text-transform uppercase
+  font-weight 600
+  letter-spacing 1px
+  border-top-width 1px
+  border-top-style solid
+
+  .on-left &, .on-right &
+    padding 1em
+    font-size 22px
+    font-weight 700
+
+.games-league--bayern
+  background-color darken($bayern-brand-color, 15%)
+  border-top-color darken($bayern-brand-color, 30%)
+
+.games-league--chelsea
+  background-color darken($chelsea-brand-color, 15%)
+  border-top-color darken($chelsea-brand-color, 30%)
+
+.games-table
+  margin 0
+  padding 0
+  width 100%
+  border none
+  border-collapse collapse
+
+  thead
+    margin 0
+    text-transform uppercase
+    font-weight 600
+    letter-spacing 1px
+    border-top-width 1px
+    border-top-style solid
+    text-align left
+    width 100%
+
+    th
+      padding 1em .5em
+      border none
+      margin 0
+      font-weight 600
+      letter-spacing 1px
+
+      .on-left &, .on-right &
+        padding 1em
+        font-size 20px
+
+  tbody
+    tr
+      border-top-width 1px
+      border-top-style solid
+
+      &:nth-child(even)
+        background-color black
+
+    td
+      padding .8em .5em
+      font-size 14px
+
+      .on-left &, .on-right &
+        padding 1em
+        font-size 20px
+
+  &--bayern
+    thead
+      background-color darken($bayern-brand-color, 15%)
+      border-top-color darken($bayern-brand-color, 30%)
+
+    tbody
+      tr
+        border-top-color darken($bayern-brand-color, 30%)
+
+        &:nth-child(even)
+          background-color darken($bayern-brand-color, 15%)
+
+  &--chelsea
+    thead
+      background-color darken($chelsea-brand-color, 15%)
+      border-top-color darken($chelsea-brand-color, 30%)
+
+    tbody
+      tr
+        border-top-color darken($chelsea-brand-color, 30%)
+
+        &:nth-child(even)
+          background-color darken($chelsea-brand-color, 15%)
