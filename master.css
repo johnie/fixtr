@@ -28,7 +28,7 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
-  font-family: "Proxima Nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
   overflow: hidden;
 }
 @media (max-width: 990px) {
@@ -96,6 +96,7 @@ body {
   bottom: 0;
   overflow: scroll;
   width: 50%;
+  min-height: 300px;
   padding: 2em 2em;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
@@ -142,12 +143,23 @@ body {
     width: 100%;
   }
 }
+@media (max-width: 760px) {
+  .team-wrap {
+    overflow: hidden;
+    padding: 1em;
+  }
+}
 .team-header {
   display: block;
   width: 100%;
   margin-bottom: 4em;
   text-align: center;
   position: relative;
+}
+@media (max-width: 760px) {
+  .team-header {
+    margin-bottom: 2em;
+  }
 }
 .tab-btn {
   line-height: 2.5;
@@ -170,6 +182,11 @@ body {
   border-radius: 4px;
   letter-spacing: 1px;
   font-size: 14px;
+}
+@media (max-width: 760px) {
+  .tab-btn {
+    font-size: 12px;
+  }
 }
 .tab-btn__left {
   left: 0;
@@ -208,8 +225,8 @@ body {
 }
 @media (max-width: 760px) {
   .team-name {
-    width: 3.5em;
-    height: 3.5em;
+    width: 2.5em;
+    height: 2.5em;
   }
 }
 .team-name--bayern {
@@ -255,6 +272,13 @@ body {
 .on-right .squad-lineup li {
   width: 25%;
 }
+@media (max-width: 760px) {
+  .squad-lineup li {
+    width: 50%;
+    padding-bottom: 34%;
+    margin-bottom: 1em;
+  }
+}
 .squad-lineup--chelsea li {
   background-image: url("images/tee-chelsea.svg");
 }
@@ -281,11 +305,22 @@ body {
   font-size: 0.7em;
   padding-bottom: 10px;
 }
+@media (max-width: 760px) {
+  .lineup-name {
+    padding-bottom: 0;
+    font-weight: 700;
+  }
+}
 .games-title {
   text-transform: uppercase;
   margin-bottom: 1em;
   font-size: 2em;
   font-weight: 600;
+}
+@media (max-width: 760px) {
+  .games-title {
+    font-size: 1.5em;
+  }
 }
 .games-league {
   margin: 0;
@@ -299,6 +334,11 @@ body {
   padding: 1em;
   font-size: 22px;
   font-weight: 700;
+}
+@media (max-width: 760px) {
+  .games-league {
+    background-color: rgba(0,0,0,0.1);
+  }
 }
 .games-table {
   margin: 0;

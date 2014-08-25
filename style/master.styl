@@ -24,7 +24,7 @@ body
   color #fff
   margin 0
   padding 0
-  font-family "Proxima Nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif
+  font-family "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif
   overflow hidden
 
   @media (max-width: 990px)
@@ -83,6 +83,7 @@ body
   bottom 0
   overflow scroll
   width 50%
+  min-height 300px
   padding 2em 2em
   vendor('transition', all .3s linear)
 
@@ -112,6 +113,10 @@ body
     position relative
     width 100%
 
+  @media (max-width: 760px)
+    overflow hidden
+    padding 1em
+
 
 .team-header
   display block
@@ -119,6 +124,9 @@ body
   margin-bottom 4em
   text-align center
   position relative
+
+  @media (max-width: 760px)
+    margin-bottom 2em
 
 .tab-btn
   line-height 2.5
@@ -135,6 +143,9 @@ body
   vendor('border-radius', 4px)
   letter-spacing 1px
   font-size 14px
+
+  @media (max-width: 760px)
+    font-size 12px
 
 .tab-btn__left
   left 0
@@ -166,8 +177,8 @@ body
   width 5em
 
   @media (max-width: 760px)
-    width 3.5em
-    height 3.5em
+    width 2.5em
+    height 2.5em
 
   &--bayern
     background-image url('images/bayern.svg')
@@ -205,6 +216,11 @@ body
     .on-left &, .on-right &
       width 25%
 
+    @media (max-width: 760px)
+      width 50%
+      padding-bottom 34%
+      margin-bottom 1em
+
   &--chelsea
     li
       background-image url('images/tee-chelsea.svg')
@@ -228,6 +244,10 @@ body
   font-size .7em
   padding-bottom 10px
 
+  @media (max-width: 760px)
+    padding-bottom 0
+    font-weight 700
+
 
 
 .games-title
@@ -235,6 +255,9 @@ body
   margin-bottom 1em
   font-size 2em
   font-weight 600
+
+  @media (max-width: 760px)
+    font-size 1.5em
 
 .games-league
   margin 0
@@ -247,6 +270,9 @@ body
     padding 1em
     font-size 22px
     font-weight 700
+
+  @media (max-width: 760px)
+    background-color rgba(0, 0, 0, .1)
 
 .games-table
   margin 0
