@@ -33,6 +33,13 @@
 <body ng-app="fixtr">
 
   <div class="site" ng-controller="MainController" ng-class="{'on-left': onLeft, 'on-right': onRight}">
+    <nav class="navigation" role="navigation">
+      <h1 class="site-name">Fixtr</h1>
+
+      <ul class="nav">
+        <li><a href="/api">API</a></li>
+      </ul>
+    </nav>
     <div class="team-wrap team-wrap--bayern">
       <a href class="expand-btn expand-btn__left" ng-click="onLeft = true; onRight = false;">Left</a>
       <header class="team-header" role="banner">

@@ -90,9 +90,48 @@ body {
 .on-right .expand-btn__right {
   opacity: 0;
 }
+.navigation {
+  background-color: #142128;
+  padding: 0 1em;
+}
+.navigation:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.site-name {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 37px;
+}
+.nav {
+  display: block;
+  float: right;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+  line-height: 37px;
+}
+.nav li {
+  display: inline-block;
+  padding: 0em 0.5em;
+}
+.nav a {
+  color: #ccc;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nav a:hover {
+  color: #fff;
+}
 .team-wrap {
   position: absolute;
-  top: 0;
+  top: 35px;
   bottom: 0;
   overflow: scroll;
   width: 50%;
